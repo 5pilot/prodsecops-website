@@ -3,33 +3,205 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProdSecOps Research – Adaptive Core Security & 5‑Pilot</title>
-  <meta name="description" content="Read the ProdSecOps innovation whitepaper: Adaptive Core Security (ACS), Automated Remediation TestBed (ART), and the 5-Pilot Framework. Shift-Vendor model explained.">
-  <meta name="keywords" content="ProdSecOps research, Adaptive Core Security, ISO 27034, security debt, 5-Pilot Framework, automated remediation, cloud security innovation">
-  <link rel="canonical" href="https://prodsecops.com/research.html">
-  <meta property="og:title" content="ProdSecOps Research – The ACS Revolution">
-  <meta property="og:description" content="How we eliminate Security Debt with ISO 27034 context and Shift-Vendor operations. 80% pre-remediation, 24/7 SOC, cost reduction.">
-  <meta property="og:image" content="https://prodsecops.com/assets/og-research.jpg">
-  <meta name="twitter:title" content="ProdSecOps Research – The ACS Revolution">
-  <!-- same favicon, fonts, styles as home – include full CSS -->
-  <style> /* full global styles, identical to home */ </style>
-  <!-- Structured Data: ScholarlyArticle -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "The ProdSecOps Revolution: Adaptive Core Security",
-    "author": {
-      "@type": "Organization",
-      "name": "V Pilot Cyber Solutions LLP"
-    },
-    "datePublished": "2025-03-01",
-    "description": "Introduces Adaptive Core Security (ACS) and the 5-Pilot Framework to operationalize ISO 27034 context and shift vendor security burden.",
-    "url": "https://prodsecops.com/research.html"
-  }
-  </script>
+  <title>ProdSecOps – Research: Adaptive Core Security</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- GLOBAL STYLES (identical to index) ---------- */
+    :root {
+      --primary: #0b2b4a;
+      --accent: #00c9a7;
+      --accent-soft: #d4f3ec;
+      --light: #f8fcff;
+      --gray-bg: #f1f6fa;
+      --text-dark: #1a2a3a;
+      --text-muted: #3e5a6c;
+      --white: #ffffff;
+      --shadow-sm: 0 12px 28px rgba(0,0,0,0.04);
+      --card-radius: 24px;
+      --font-sans: 'Inter', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    h1, h2, h3 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    h1 { font-size: 3.3rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #0a1c2a;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 18px rgba(0,201,167,0.2);
+    }
+    .btn:hover {
+      background: #00b396;
+      transform: translateY(-2px);
+    }
+    /* ---------- NAVIGATION ---------- */
+    nav {
+      background: rgba(255,255,255,0.9);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav-links a { transition: color 0.15s; }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--primary);
+      color: #d0e0eb;
+      padding: 48px 0;
+      margin-top: 80px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    /* ---------- RESEARCH PAGE SPECIFIC ---------- */
+    .research-article {
+      background: var(--white);
+      border-radius: 40px;
+      padding: 56px;
+      box-shadow: var(--shadow-sm);
+      margin: 60px 0;
+    }
+    .abstract {
+      background: var(--gray-bg);
+      padding: 32px 40px;
+      border-radius: 28px;
+      border-left: 8px solid var(--accent);
+      font-size: 1.15rem;
+      margin: 40px 0;
+    }
+    .pilot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .pilot-item {
+      background: var(--light);
+      padding: 28px 20px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.15s;
+    }
+    .pilot-item i {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .pilot-item h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    @media (max-width: 680px) {
+      .nav-container { flex-direction: column; gap: 16px; }
+      .nav-links { gap: 1.8rem; }
+      .research-article { padding: 32px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- same navigation and footer, only main content is the research article -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo"><span>Prod</span>SecOps</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="research-article">
+      <h1 style="font-size: 3rem; color: var(--primary);">The ProdSecOps Revolution</h1>
+      <h2 style="font-weight: 600; color: var(--accent); margin-bottom: 30px; font-size: 1.9rem;">Adaptive Core Security (ACS)</h2>
+      
+      <div class="abstract">
+        <i class="fas fa-quote-left" style="color: var(--accent); font-size: 2rem; opacity: 0.5; margin-right: 10px;"></i> 
+        Most organizations migrate to the cloud for flexibility but are paralyzed by the cost and complexity of security operations. Traditional DevSecOps covers the build phase but leaves a governance gap in production. This research introduces ProdSecOps, a methodology that integrates ISO 27034 Application Security Context with a <strong>"Shift-Vendor" operational model</strong> to achieve security operations excellence.
+      </div>
+
+      <h2 style="font-size: 1.9rem; margin-top: 56px;">1. The Problem: The "Security Debt" Trap</h2>
+      <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px;">When organizations move to the cloud, they often inherit "Security Debt." They deploy standard infrastructure (Kubernetes clusters, SQL databases, VMs) without fully configuring the security overhead required to maintain them. The result is a bloated attack surface, skyrocketing cloud compute costs, and a security team that is constantly firefighting.</p>
+
+      <h2 style="font-size: 1.9rem;">2. The Solution: Adaptive Core Security (ACS)</h2>
+      <p style="font-size: 1.15rem; color: var(--text-muted);">Our innovation replaces generic deployments with ACS Templates. Derived from our <strong style="color: var(--primary);">Automated Remediation TestBed (ART)</strong>, these templates allow us to deploy a "Minimum Viable Security" environment that is:</p>
+      <ul style="margin: 30px 0 20px 30px; list-style: none;">
+        <li style="margin-bottom: 18px; display: flex; gap: 16px;"><i class="fas fa-shield" style="color: var(--accent); font-size: 1.4rem;"></i> <strong>Born Secure:</strong> Utilizing our testbed logic, 80% of common configuration vulnerabilities are pre-remediated before the infrastructure is ever deployed.</li>
+        <li style="margin-bottom: 18px; display: flex; gap: 16px;"><i class="fas fa-coins" style="color: var(--accent); font-size: 1.4rem;"></i> <strong>Cost-Effective:</strong> By mapping the ISO 27034 Application Context, we strip away unnecessary services and default bloat. You pay only for the compute power you actually need, hardened by default.</li>
+        <li style="margin-bottom: 18px; display: flex; gap: 16px;"><i class="fas fa-arrows-spread" style="color: var(--accent); font-size: 1.4rem;"></i> <strong>Flexible:</strong> The architecture adapts to the specific risk profile of the application, rather than applying a "one-size-fits-all" security blanket.</li>
+      </ul>
+
+      <h2 style="font-size: 1.9rem; margin-top: 50px;">3. Operational Excellence: The 5-Pilot Framework</h2>
+      <p style="font-size: 1.15rem; margin-bottom: 20px;">Once deployed, V Pilot Cyber assumes the operational burden through five integrated pilots, ensuring a 360-degree defense:</p>
+      <div class="pilot-grid">
+        <div class="pilot-item"><i class="fas fa-bug"></i><h4>Vul Pilot</h4><p style="color: var(--text-muted);">Offensive – Continuous scanning & automated patching</p></div>
+        <div class="pilot-item"><i class="fas fa-eye"></i><h4>SOC Pilot</h4><p style="color: var(--text-muted);">Defensive – 24/7 Security Operations Center</p></div>
+        <div class="pilot-item"><i class="fas fa-clipboard-check"></i><h4>GRC Pilot</h4><p style="color: var(--text-muted);">Governance – ISO, HIPAA, risk registers</p></div>
+        <div class="pilot-item"><i class="fas fa-id-card"></i><h4>Sec Admin Pilot</h4><p style="color: var(--text-muted);">Administrative – IAM, configuration drift</p></div>
+        <div class="pilot-item"><i class="fas fa-rotate"></i><h4>IR Pilot</h4><p style="color: var(--text-muted);">Resilience – BCDR & recovery</p></div>
+      </div>
+
+      <div style="background: var(--primary); color: white; padding: 48px; border-radius: 40px; margin-top: 60px;">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 20px;">Conclusion</h2>
+        <p style="font-size: 1.25rem; opacity: 0.9;">ProdSecOps transforms security from a cost center into a business enabler. By shifting the vendor responsibility, organizations gain enterprise-grade security at a fraction of the operational cost.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>© 2025 V Pilot Cyber Solutions LLP — Operational Resilience Partner</div>
+      <div style="display: flex; gap: 28px;">
+        <a href="https://github.com/vpilot" target="_blank" style="color: white;"><i class="fab fa-github"></i></a>
+        <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
