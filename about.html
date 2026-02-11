@@ -3,30 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About V Pilot Cyber – ProdSecOps & 5D PUDICA</title>
-  <meta name="description" content="V Pilot Cyber Group: Operational Resilience Partner. The 5D PUDICA Methodology inspired by Mimosa pudica – adaptive, automated cloud defense.">
-  <meta name="keywords" content="V Pilot Cyber, 5D PUDICA, Mimosa pudica security, automated remediation, cloud governance, MSSP India">
-  <link rel="canonical" href="https://prodsecops.com/about.html">
-  <meta property="og:title" content="About V Pilot Cyber – 5D PUDICA Methodology">
-  <meta property="og:description" content="We democratise elite security. Born from the sensitive plant, our 5D protocol hardens instantly under threat.">
-  <meta property="og:image" content="https://prodsecops.com/assets/og-about.jpg">
-  <meta name="twitter:title" content="About V Pilot Cyber – 5D PUDICA Methodology">
-  <style> /* full CSS */ </style>
-  <!-- Structured Data: same Organization + additional -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About V Pilot Cyber Group",
-    "description": "Our philosophy, mission, and the 5D PUDICA Protocol.",
-    "mainEntity": {
-      "@type": "Organization",
-      "@id": "https://prodsecops.com/#organization"
+  <title>ProdSecOps – About V Pilot Cyber Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- GLOBAL STYLES (identical) ---------- */
+    :root {
+      --primary: #0b2b4a;
+      --accent: #00c9a7;
+      --accent-soft: #d4f3ec;
+      --light: #f8fcff;
+      --gray-bg: #f1f6fa;
+      --text-dark: #1a2a3a;
+      --text-muted: #3e5a6c;
+      --white: #ffffff;
+      --shadow-sm: 0 12px 28px rgba(0,0,0,0.04);
+      --card-radius: 24px;
+      --font-sans: 'Inter', sans-serif;
     }
-  }
-  </script>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    h1, h2, h3 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    h1 { font-size: 3.3rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #0a1c2a;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+    /* ---------- NAVIGATION (same) ---------- */
+    nav {
+      background: rgba(255,255,255,0.9);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav-links a { transition: color 0.15s; }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--primary);
+      color: #d0e0eb;
+      padding: 48px 0;
+      margin-top: 80px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    /* ---------- ABOUT PAGE SPECIFIC ---------- */
+    .philosophy-block {
+      background: linear-gradient(135deg, #0a1f2e 0%, #0b2b4a 100%);
+      color: white;
+      border-radius: 40px;
+      padding: 56px;
+      margin: 48px 0;
+    }
+    .dna-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .dna-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      padding: 28px 12px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .dna-card h5 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    @media (max-width: 1000px) {
+      .dna-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (max-width: 680px) {
+      .nav-container { flex-direction: column; gap: 16px; }
+      .nav-links { gap: 1.8rem; }
+      .dna-grid { grid-template-columns: 1fr 1fr; }
+      .philosophy-block { padding: 32px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- content unchanged -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo"><span>Prod</span>SecOps</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 style="font-size: 3rem; margin: 60px 0 20px; color: var(--primary);">V Pilot Cyber Group</h1>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px;">
+      <div>
+        <h2 style="font-weight: 600; margin-bottom: 24px;">Who We Are</h2>
+        <p style="font-size: 1.2rem; color: var(--text-muted);">V Pilot Cyber Solutions LLP is a pioneer in Automated Remediation and Cloud Governance. We are not just a Managed Security Service Provider (MSSP); we are an <strong>Operational Resilience Partner</strong>.</p>
+      </div>
+      <div style="background: var(--accent-soft); border-radius: 30px; padding: 40px; text-align: center;">
+        <i class="fas fa-seedling" style="font-size: 5rem; color: var(--accent);"></i>
+      </div>
+    </div>
+
+    <!-- 5D PUDICA METHODOLOGY -->
+    <div class="philosophy-block">
+      <h2 style="color: white; font-size: 2.2rem; margin-bottom: 16px;">Our Philosophy: 5D PUDICA Methodology</h2>
+      <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 32px;">In a landscape of evolving threats, static defense is dead. We believe security must be alive — reactive, adaptive, and resilient.</p>
+      <p style="font-size: 1.15rem; margin-bottom: 48px;">Inspired by the biological survival mechanism of the <em style="color: var(--accent); font-weight: 600;">Mimosa pudica</em> (the sensitive plant), we developed the <strong>5D PUDICA Protocol</strong> (Proactive Unified Defense & Intelligent Cyber Adaptation). Just as the plant instantly folds its leaves to hide vital assets when threatened, our systems automatically "harden" at the first sign of danger.</p>
+      
+      <h3 style="color: white; font-size: 1.8rem; margin-bottom: 32px;">The 5 Dimensions of Our DNA</h3>
+      <div class="dna-grid">
+        <div class="dna-card"><h5>SETUP</h5><p style="color: rgba(255,255,255,0.8);">Identifying roots and assets.</p></div>
+        <div class="dna-card"><h5>ASSESS</h5><p style="color: rgba(255,255,255,0.8);">Sensing vibrations and vulnerabilities.</p></div>
+        <div class="dna-card"><h5>MANAGE</h5><p style="color: rgba(255,255,255,0.8);">The defensive fold; active protection.</p></div>
+        <div class="dna-card"><h5>RECOVER</h5><p style="color: rgba(255,255,255,0.8);">Solar-speed restoration of services.</p></div>
+        <div class="dna-card"><h5>COMPLY</h5><p style="color: rgba(255,255,255,0.8);">The thorns; governance that deters attackers.</p></div>
+      </div>
+    </div>
+
+    <!-- MISSION -->
+    <div style="background: var(--gray-bg); border-radius: 48px; padding: 60px; margin: 60px 0;">
+      <h2 style="color: var(--primary);">Our Mission</h2>
+      <p style="font-size: 1.4rem; font-weight: 500; max-width: 900px;">To democratize high-end security operations. We believe that robust, adaptive security shouldn't be a luxury reserved for the Fortune 500. Through automation and our Shift-Vendor model, we make elite security accessible, affordable, and adaptable for all.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>© 2025 V Pilot Cyber Solutions LLP — Operational Resilience Partner</div>
+      <div style="display: flex; gap: 28px;">
+        <a href="https://github.com/vpilot" target="_blank" style="color: white;"><i class="fab fa-github"></i></a>
+        <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
