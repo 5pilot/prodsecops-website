@@ -3,232 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProdSecOps | Shift-Vendor Security by V Pilot</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>ProdSecOps | Shift-Vendor Security by V Pilot Cyber</title>
     <style>
-        body { font-family: 'Roboto', sans-serif; color: #333; }
-        .hero-section {
-            background: linear-gradient(135deg, #003366 0%, #00509E 100%); /* Aviation Blue Theme */
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+        :root {
+            --bg-color: #0a0f1c;
+            --text-color: #e0e6ed;
+            --accent-color: #00ff88;
+            --secondary-color: #00b3ff;
+            --card-bg: #151b2b;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .v-pilot-badge {
-            background-color: white;
-            color: #003366;
-            padding: 5px 15px;
-            border-radius: 20px;
+
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(10, 15, 28, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
             font-weight: bold;
-            font-size: 0.9rem;
+            color: var(--accent-color);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem;
+            background: radial-gradient(circle at center, #1a233a 0%, var(--bg-color) 70%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0aab5;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
             display: inline-block;
-            margin-bottom: 20px;
         }
-        .section-title {
-            border-left: 5px solid #003366;
-            padding-left: 15px;
-            margin-bottom: 30px;
-            color: #003366;
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--accent-color);
         }
-        .card { border: none; shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .tier-card { border: 1px solid #e0e0e0; border-radius: 10px; }
-        .tier-header { background-color: #f8f9fa; padding: 20px; border-bottom: 1px solid #e0e0e0; text-align: center; }
-        .btn-pilot { background-color: #003366; color: white; padding: 10px 30px; }
-        .btn-pilot:hover { background-color: #002244; color: white; }
-        footer { background-color: #1a1a1a; color: #aaa; padding: 40px 0; margin-top: 50px; }
+
+        /* Service Tiers */
+        .tiers {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 4rem 5%;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .card li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #2a3441;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Research Post Section */
+        .research-section {
+            padding: 4rem 15%;
+            background: #0d1221;
+        }
+
+        .research-article {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .research-article h2 {
+            color: var(--accent-color);
+        }
+        
+        .research-article h3 {
+            margin-top: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .code-block {
+            background: #000;
+            padding: 1rem;
+            font-family: monospace;
+            color: #0f0;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        /* Footer & Contact */
+        footer {
+            background: #05080f;
+            padding: 4rem 5%;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            color: #888;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">
-                <img src="vpilot-logo.png" alt="V Pilot Logo" height="40" class="d-inline-block align-text-top me-2">
-                ProdSecOps
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#methodology">5D PUDICA Methodology</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tiers">Service Tiers</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3 px-4" href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
+    <nav>
+        <div class="logo">ProdSecOps <span style="font-size:0.8rem; color:#888;">by V Pilot Cyber</span></div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#research">Innovation Research</a>
+            <a href="#about">About V Pilot</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="container">
-            <div class="v-pilot-badge">Powered by V Pilot Cyber Solutions LLP</div>
-            <h1 class="display-3 fw-bold">Shift Security Left... <br>And To The Provider.</h1>
-            <p class="lead my-4">The "Shift-Vendor" revolution. We build, migrate, and govern your cloud infrastructure using a Vital Resilience Core.</p>
-            <a href="#tiers" class="btn btn-light btn-lg text-primary fw-bold">View Service Models</a>
-        </div>
+    <section id="home" class="hero">
+        <h1>Shift-Vendor Security</h1>
+        <p>Operationalizing the "Shared Responsibility Model" by shifting the burden of Cloud Security from the customer to the provider.</p>
+        <p><strong>DevSecOps + ISO 27034 + 5-Pilot Framework</strong></p>
+        <a href="#contact" class="btn">Get Started</a>
     </section>
 
-    <section id="methodology" class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="section-title">The 5D PUDICA Protocol</h2>
-                    <p class="lead">Nature-Inspired Resilience. ISO-Driven Governance.</p>
-                    <p>Inspired by the <em>Mimosa pudica</em>, our framework ensures your infrastructure is a living system that "folds" (hardens) under threat and recovers at "Solar-Speed".</p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="mb-3"><strong>🌱 D1: SETUP (Identify)</strong> - Establishing the Vital Resilience Core.</li>
-                        <li class="mb-3"><strong>📡 D2: ASSESS (Sense)</strong> - Vibration-based threat detection.</li>
-                        <li class="mb-3"><strong>🛡️ D3: MANAGE (Act)</strong> - Dynamic attack surface reduction.</li>
-                        <li class="mb-3"><strong>☀️ D4: RECOVERY (Assurance)</strong> - 8-minute "Solar-Speed" restoration.</li>
-                        <li class="mb-3"><strong>⚖️ D5: COMPLIANCE (Govern)</strong> - Regulatory thorns (ISO/NIST).</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="methodology-diagram.png" class="img-fluid rounded shadow" alt="5D PUDICA Methodology Diagram">
-                    <p class="text-muted small mt-2">Figure 1: The Bio-Adaptive Security Cycle</p>
-                </div>
+    <section id="services">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Project Catalogue & Service Tiers</h2>
+        <div class="tiers">
+            <div class="card">
+                <h3>BASIC (Tier 3)</h3>
+                <span class="price">Foundation</span>
+                <p>For Startups & Remote Teams</p>
+                <ul>
+                    <li>✅ AD / Entra ID Management</li>
+                    <li>✅ Endpoint DLP & Proxy</li>
+                    <li>✅ Basic Threat Intelligence</li>
+                    <li>✅ Quarterly Vulnerability Scan</li>
+                </ul>
+                <a href="#contact" class="btn" style="font-size:0.8rem;">Select Plan</a>
+            </div>
+
+            <div class="card" style="border-color: var(--accent-color); box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);">
+                <h3>STANDARD (Tier 2)</h3>
+                <span class="price">Growth</span>
+                <p>For SMEs & Regional Business</p>
+                <ul>
+                    <li>✅ <strong>ISO 27001 Alignment</strong></li>
+                    <li>✅ 8/5 SOC Monitoring</li>
+                    <li>✅ RBAC & PAM Management</li>
+                    <li>✅ Monthly Patch Management</li>
+                </ul>
+                <a href="#contact" class="btn" style="font-size:0.8rem;">Select Plan</a>
+            </div>
+
+            <div class="card">
+                <h3>PREMIUM (Tier 1)</h3>
+                <span class="price">Enterprise</span>
+                <p>For E-Com & IaaS Providers</p>
+                <ul>
+                    <li>✅ <strong>Full 5-Pilot Suite Ops</strong></li>
+                    <li>✅ 24/7 Real-Time SOC</li>
+                    <li>✅ Continuous ART Remediation</li>
+                    <li>✅ <15 Min RTO High Availability</li>
+                </ul>
+                <a href="#contact" class="btn" style="font-size:0.8rem;">Select Plan</a>
             </div>
         </div>
     </section>
 
-    <section id="architecture" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">ProdSecOps Architecture</h2>
-            <p class="text-center mb-5">A Dual-Phase Approach to "Shift-Vendor" Security</p>
-            
-            <div class="row text-center mb-5">
-                <div class="col-md-10 offset-md-1">
-                     <img src="architecture-design.png" class="img-fluid bg-white p-2 border rounded" alt="ProdSecOps Architecture">
-                </div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 p-4">
-                        <h4>Phase 1: Cloud Build & Migration</h4>
-                        <p class="text-primary fw-bold">Focus: ISO 27034 & DevSecOps</p>
-                        <p>We automate the build of your cloud infrastructure. We don't just secure the server; we secure the <em>Application Context</em>, embedding security into the DNA of your digital migration.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100 p-4">
-                        <h4>Phase 2: Governance & Operations</h4>
-                        <p class="text-primary fw-bold">Focus: 5-Pilot Integrated Framework</p>
-                        <p>Once deployed, we apply our 5-Pilot Suite (Vul Pilot, SOC Pilot, GRC Pilot, Sec Admin Pilot, Incident Response Pilot) to ensure 360-degree service assurance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tiers" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Service Models</h2>
-            <div class="row g-4 mt-4">
-                <div class="col-lg-4">
-                    <div class="card tier-card h-100">
-                        <div class="tier-header">
-                            <h3>Tier 3: BASIC</h3>
-                            <p class="text-muted">Remote Workforce Foundation</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Entra ID (Azure AD) Management</li>
-                                <li class="list-group-item">IAM & PAM Access Policies</li>
-                                <li class="list-group-item">Basic Data Loss Prevention (DLP)</li>
-                                <li class="list-group-item">EndPoint Proxy & Threat Intel</li>
-                                <li class="list-group-item">Standard WAF Protection</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card tier-card border-primary h-100 shadow">
-                        <div class="tier-header bg-primary text-white">
-                            <h3>Tier 2: STANDARD</h3>
-                            <p class="text-white-50">Growth & Compliance</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>All Tier 3 Features +</strong></li>
-                                <li class="list-group-item">Full Kubernetes (K8s) Hardening</li>
-                                <li class="list-group-item">DevSecOps CI/CD Integration</li>
-                                <li class="list-group-item">ISO 27001 & SOC 2 Readiness</li>
-                                <li class="list-group-item">24/7 SOC Pilot Monitoring</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card tier-card h-100">
-                        <div class="tier-header">
-                            <h3>Tier 1: PREMIUM</h3>
-                            <p class="text-muted">Enterprise & Commerce</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>All Tier 2 Features +</strong></li>
-                                <li class="list-group-item">Zero Trust Micro-segmentation</li>
-                                <li class="list-group-item">AI-Driven Threat Hunting</li>
-                                <li class="list-group-item">Dedicated CISO Advisory</li>
-                                <li class="list-group-item">< 15 Min RTO (High Availability)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h2 class="text-center mb-4">Start Your Phase 1 Assessment</h2>
-                    <p class="text-center mb-5">Ready to shift your security burden? Contact the V Pilot engineering team.</p>
-                    
-                    <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" name="name" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Work Email</label>
-                            <input type="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Select Service Tier</label>
-                            <select name="tier" class="form-select">
-                                <option>Tier 3: Basic (Remote Workforce)</option>
-                                <option>Tier 2: Standard (Growth)</option>
-                                <option>Tier 1: Premium (Enterprise)</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea name="message" class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg px-5">Submit Inquiry</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center">
-        <div class="container">
-            <p>&copy; 2026 ProdSecOps. All Rights Reserved.</p>
-            <p class="small">A Project Initiative by <strong>V PILOT CYBER SOLUTIONS LLP</strong></p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <section id="research"
