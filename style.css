@@ -1,0 +1,194 @@
+/* --- V-PILOT GLOBAL STYLES --- */
+:root {
+    --primary-blue: #0052cc;
+    --deep-blue: #022b6d;
+    --bright-blue: #2684ff;
+    --logo-gold: #d4cba5;
+    --logo-gold-dark: #a89f7d;
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --text-main: #172b4d;
+    --text-light: #5e6c84;
+    --font-head: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --shadow-card: 0 10px 30px rgba(0, 82, 204, 0.08);
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg-white); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: var(--font-head); color: var(--deep-blue); }
+a { text-decoration: none; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- 3D RADAR BACKGROUND ANIMATION --- */
+.radar-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
+    background: radial-gradient(circle at 50% 50%, #f0f8ff 0%, #ffffff 70%);
+    overflow: hidden;
+}
+.radar-scan {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 80vw; height: 80vw; border-radius: 50%;
+    border: 1px solid rgba(0, 82, 204, 0.05);
+    background: repeating-radial-gradient(rgba(0, 82, 204, 0.02) 0, rgba(0, 82, 204, 0.02) 1px, transparent 2px, transparent 100px);
+}
+.radar-sweep {
+    position: absolute; left: 50%; top: 50%; width: 50%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--bright-blue));
+    transform-origin: left center;
+    animation: radar-spin 4s linear infinite;
+    box-shadow: 0 0 15px var(--bright-blue);
+    opacity: 0.3;
+}
+@keyframes radar-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* NAVIGATION */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 82, 204, 0.1);
+    display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand img { height: 55px; }
+.brand-text { font-family: var(--font-head); font-weight: 800; color: var(--primary-blue); font-size: 2.2rem; line-height: 1; }
+.brand-text span { display: block; font-size: 0.5rem; color: var(--logo-gold-dark); letter-spacing: 2.9px; margin-left: 1.1em; text-transform: uppercase; font-weight: 600; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary-blue); }
+.nav-cta { padding: 0.6rem 1.5rem; background: var(--primary-blue); color: white !important; border-radius: 50px; font-weight: 600; }
+.nav-cta:hover { background: var(--deep-blue); }
+
+/* Vector Grid */
+.radar-bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 82, 204, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 82, 204, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
+
+@keyframes radarPulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* SECTIONS & COMPONENTS */
+.hero { min-height: 90vh; display: flex; align-items: center; padding: 0 10%; position: relative; padding-top: 80px; }
+.hero-content { max-width: 650px; z-index: 2; }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
+.hero h1 span { color: var(--bright-blue); }
+.hero p { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2rem; border-left: 4px solid var(--bright-blue); padding-left: 1rem; }
+.btn-primary { padding: 1rem 2.5rem; background: var(--primary-blue); color: white; border-radius: 6px; font-weight: 600; display: inline-block; }
+.btn-primary:hover { background: var(--deep-blue); transform: translateY(-3px); }
+
+.section { padding: 6rem 10%; position: relative; }
+.bg-light { background: var(--bg-light); }
+.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.divider { width: 60px; height: 4px; background: var(--bright-blue); margin: 1.5rem auto 0; }
+
+/* MIMOSA ANIMATION */
+.mimosa-container { display: flex; flex-wrap: wrap; align-items: center; gap: 4rem; margin-top: 3rem; }
+.mimosa-visual { flex: 1; min-width: 300px; height: 300px; display: flex; justify-content: center; align-items: flex-end; position: relative; cursor: pointer; }
+     
+.mimosa-stem {
+    width: 8px; height: 200px; background: #6b8c42; border-radius: 10px; position: absolute; bottom: 0;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom center;
+    }
+.stem-left { transform: rotate(-35deg); left: 48%; }
+.stem-right { transform: rotate(35deg); right: 48%; }
+
+/* Leaves */
+.leaf { position: absolute; width: 30px; height: 12px; background: #8abf56; border-radius: 20px 0 20px 0; }
+.stem-left .leaf { left: -25px; }
+.stem-right .leaf { right: -25px; transform: scaleX(-1); }
+
+/* Emulate 'V' Emblem */
+.v-emblem-text { position: absolute; bottom: -40px; font-weight: bold; color: var(--primary-blue); letter-spacing: 2px; }
+
+/* FOLD ACTION (Hover on container) */
+.mimosa-visual:hover .stem-left { transform: rotate(-5deg); height: 180px; background: #556b2f; }
+.mimosa-visual:hover .stem-right { transform: rotate(5deg); height: 180px; background: #556b2f; }
+.mimosa-visual:hover .leaf { background: #556b2f; width: 10px; } /* Shrink leaves */
+
+
+/* --- 3D TWIN ENGINE ANIMATION (Technology Page) --- */
+.engine-container { display: flex; justify-content: center; gap: 40px; margin: 3rem 0; perspective: 800px; }
+.engine {
+    width: 120px; height: 120px; background: conic-gradient(from 0deg, #ccc, #fff, #ccc);
+    border-radius: 50%; border: 8px solid var(--primary-blue);
+    position: relative; animation: spin 2s linear infinite; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.engine::after {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 40px; height: 40px; background: var(--deep-navy); border-radius: 50%;
+}
+.turbine-blade {
+    position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #999;
+}
+.turbine-blade:nth-child(2) { transform: rotate(45deg); }
+.turbine-blade:nth-child(3) { transform: rotate(90deg); }
+.turbine-blade:nth-child(4) { transform: rotate(135deg); }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* --- WING TYPE GRIDS --- */
+.wing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.wing-card {
+    background: white; padding: 2.5rem; border-radius: 12px;
+    box-shadow: var(--shadow-card); border-top: 5px solid var(--logo-gold);
+    transition: 0.3s; position: relative; overflow: hidden;
+}
+.wing-card:hover { transform: translateY(-10px); border-top-color: var(--primary-blue); box-shadow: var(--shadow-hover); }
+.wing-icon { font-size: 2.5rem; color: var(--bright-blue); margin-bottom: 1rem; }
+.wing-label { font-size: 0.8rem; font-weight: 700; color: var(--logo-gold-dark); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+.learn-more { color: var(--primary-blue); font-weight: 700; margin-top: 1rem; display: inline-block; font-size: 0.9rem; }
+
+
+
+/* --- 7. SERVICE GRID --- */
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-card {
+    background: white; padding: 2.5rem; border-radius: 12px;
+    box-shadow: var(--shadow-card); transition: 0.3s;
+    border-top: 4px solid transparent;
+}
+.service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-top-color: var(--bright-blue); }
+.s-icon { font-size: 2rem; color: var(--primary-blue); margin-bottom: 1.5rem; }
+.service-card h3 { margin-bottom: 1rem; }
+.learn-more { color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 1rem; }
+.learn-more:hover { text-decoration: underline; }
+
+/* --- 9. TIER TABLE (Solutions Page) --- */
+.tier-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-card); margin-top: 2rem; }
+.tier-table th, .tier-table td { padding: 1.5rem; text-align: center; border-bottom: 1px solid #eee; }
+.tier-table th { background: var(--deep-blue); color: white; }
+.tier-table tr:hover { background-color: var(--light-blue-bg); }
+
+
+/* --- 8. CONTACT --- */
+.contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.c-form { background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-card); }
+.c-form input, .c-form select, .c-form textarea { width: 100%; padding: 12px; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); }
+.c-form button { width: 100%; padding: 12px; background: var(--deep-blue); color: white; border: none; font-weight: 700; cursor: pointer; }
+
+/* FOOTER */
+footer { background: var(--deep-blue); color: white; padding: 5rem 10% 2rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+footer h4 { color: white; margin-bottom: 1.5rem; }
+footer a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 0.5rem; }
+footer a:hover { color: var(--bright-blue); }
+.copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2.5rem; }
+    .section { padding: 4rem 5%; }
+}
