@@ -4,44 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | V Pilot Cyber Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="radar-bg"><div class="radar-scan"><div class="radar-sweep"></div></div></div>
 
     <nav class="navbar">
-        <div class="brand"><img src="logo.jpg" class="brand-logo"><div class="brand-text">V PILOT</div></div>
+        <div class="brand">
+            <img src="logo.jpg" alt="V Pilot Logo" class="brand-logo">
+            <div class="brand-text-container">
+                <div class="brand-text">V PILOT</div>
+                <div class="brand-text-divider"></div>
+                <div class="brand-span">CYBER SOLUTIONS</div>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="technology.html">Technology</a>
             <a href="services.html" class="active">Services</a>
             <a href="solutions.html">Solutions</a>
             <a href="contact.html">Contact Us</a>
+            <a href="contact.html" class="nav-cta">Consult Now</a>
         </div>
-        <a href="contact.html" class="btn-nav">Consult Now</a>
     </nav>
 
     <section class="hero">
-        <h1>The Pilot Fleet</h1>
-        <p>Our Core ART Engine adapts to every wing of your infrastructure flight. These Pilots will drive your business safely.</p>
+        <div class="hero-content">
+            <h1>The Pilot Fleet</h1>
+            <p>Our Core ART Engine adapts to every wing of your infrastructure flight. These Pilots will drive your business safely.</p>
+        </div>
     </section>
 
     <section class="section">
         <div class="wing-grid">
-            
             <div class="wing-card">
-                <div style="display:flex; justify-content:center; gap:10px;">
-                    <div class="engine-small"><div class="turbine-small"><div class="blade-s b1"></div><div class="blade-s b2"></div><div class="blade-s b3"></div><div class="blade-s b4"></div></div></div>
-                    <div class="engine-small"><div class="turbine-small"><div class="blade-s b1"></div><div class="blade-s b2"></div><div class="blade-s b3"></div><div class="blade-s b4"></div></div></div>
-                </div>
+                <i class="fas fa-shield-virus wing-icon"></i>
                 <h3>Vulnerability Pilot</h3>
                 <span class="wing-label">Dual ART Engine Powered</span>
                 <p>Unified Vulnerability Remediations combined with Secure Infra Build through ART Solutions.</p>
-                <a href="vul_pilot.html" class="learn-more">Learn More &rarr;</a>
+                <a href="#" class="learn-more">Learn More &rarr;</a>
             </div>
 
             <div class="wing-card">
-                <div class="radar-dish"><div class="radar-grid"></div><div class="radar-line"></div></div>
+                <i class="fas fa-satellite-dish wing-icon"></i>
                 <h3>Vigil Pilot</h3>
                 <span class="wing-label">Monitoring & Threat Intel</span>
                 <p>SIEM-as-a-Service embedding 5D PUDICA Methodology to continuously Monitor and Protect utilizing advanced Threat Intelligence.</p>
@@ -49,7 +59,7 @@
             </div>
 
             <div class="wing-card">
-                <div class="steering-yoke"></div>
+                <i class="fas fa-compass wing-icon"></i>
                 <h3>Compass Pilot</h3>
                 <span class="wing-label">Governance Navigator</span>
                 <p>Internal Governance & Audit Steering. We take the "Auditee" responsibility, managing Risk Assessments and Policies (ISO 27001, SOC 2).</p>
@@ -57,7 +67,7 @@
             </div>
 
             <div class="wing-card">
-                <div class="parachute-visual"></div>
+                <i class="fas fa-fire-extinguisher wing-icon"></i>
                 <h3>Phoenix Pilot</h3>
                 <span class="wing-label">Recovery & Resilience</span>
                 <p>Incident Response & DR. Custom playbooks, RTO/RPO effectiveness, and periodic simulation attack drills.</p>
@@ -65,7 +75,7 @@
             </div>
 
             <div class="wing-card">
-                <div class="stealth-plane"></div>
+                <i class="fas fa-user-secret wing-icon"></i>
                 <h3>Privacy Pilot</h3>
                 <span class="wing-label">Stealth Protection</span>
                 <p>DPO-as-a-Service. Operationalizes privacy to protect PII and drive stakeholder awareness through Design, Build, Govern lifecycle.</p>
@@ -73,7 +83,7 @@
             </div>
 
             <div class="wing-card">
-                 <div class="engine-small"><div class="turbine-small"><div class="blade-s b1"></div><div class="blade-s b2"></div><div class="blade-s b3"></div><div class="blade-s b4"></div></div></div>
+                 <i class="fas fa-laptop-code wing-icon"></i>
                 <h3>EndPoint Pilot</h3>
                 <span class="wing-label">Defensive Maneuver</span>
                 <p>Proactive simulation of attacker behaviors. Continuous remediation through Intune policy management and forensic recovery.</p>
@@ -83,11 +93,12 @@
     </section>
 
     <footer>
-        <div class="footer-row">
-            <div style="font-weight:700;">V PILOT CYBER SOLUTIONS</div>
-            <div class="footer-links"><a href="#">vpilot.org</a><a href="#">5pilot.com</a></div>
+        <div class="footer-grid">
+            <div><h4>V Pilot Cyber</h4><p>We Pilot Your Security.</p></div>
+            <div><h4>Links</h4><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
+            <div><h4>Contact</h4><p>contact@vpilot.org</p></div>
         </div>
-        <div style="text-align:center;">&copy; 2026 V Pilot Cyber Solutions LLP.</div>
+        <div class="copyright">&copy; 2026 V Pilot Cyber Solutions LLP.</div>
     </footer>
 </body>
 </html>
