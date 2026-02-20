@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | V-Pilot Cyber Solutions</title>
     <meta name="description" content="Intelligent, Adaptive, AI-Powered Cyber Security. We Pilot Your Security Operations.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
@@ -16,9 +14,12 @@
     </div>
 
     <nav class="navbar">
-		<a href="/" class="navbar-brand" aria-label="V Pilot Cyber Solutions Home"> 
-			<img src="logo.svg" alt="V Pilot 3D Logo" class="brand-logo"> 
-		</a>
+        <div class="brand">
+            <img src="logo.jpg" alt="V Pilot Logo">
+            <div class="brand-text">V PILOT <span>CYBER SOLUTIONS</span></div>
+        </div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <div class="nav-links">
             <a href="/" class="active">Home</a>
             <a href="technology">Technology</a>
@@ -37,11 +38,12 @@
             <a href="solutions.html" class="btn-primary">Explore Our Solutions</a>
         </div>
     </section>
+
     <section class="section">
         <div class="section-header">
             <h2>Who We Are</h2>
-            <p> The Unified Solution for Cyber Resilience</p>
-			<div class="divider"></div>				
+            <p>The Unified Solution for Cyber Resilience</p>
+            <div class="divider"></div>				
             <p style="margin-top: 1rem;">We are the new generation of cybersecurity. We recognize that AI-driven development introduces risks; our mission is to transform those risks into resilient operations.</p>
         </div>
     </section>
@@ -49,8 +51,8 @@
     <section class="section">
         <div class="section-header">
             <h2>5D PUDICA Methodology</h2>
-            <p> Proactive Unified Defense & Integrated Cyber Adaptation</p>
-			<div class="divider"></div>			
+            <p>Proactive Unified Defense & Integrated Cyber Adaptation</p>
+            <div class="divider"></div>			
         </div>
 		
         <div class="mimosa-container">
@@ -64,7 +66,6 @@
                     <div class="leaf" style="bottom:120px"></div>
                     <div class="leaf" style="bottom:140px"></div>					
                     <div class="leaf" style="bottom:160px"></div>
-					
                 </div>
                 <div class="stem-right mimosa-stem">
                     <div class="leaf" style="bottom:20px"></div>
@@ -75,12 +76,11 @@
                     <div class="leaf" style="bottom:120px"></div>
                     <div class="leaf" style="bottom:140px"></div>					
                     <div class="leaf" style="bottom:160px"></div>
-					
                 </div>
-                <div class="v-emblem-text"><i class="fa-solid fa-hand-pointer"></i> Hover to see Adaptation</div>				
+                <div class="v-emblem-text"><i class="fa-solid fa-hand-pointer"></i> Hover to Adapt</div>				
             </div>
 
-            <div style="flex: 2; min-width: 300px;">
+            <div class="flex-1">
                 <h3>Nature-Inspired Driven Governance</h3>
                 <p style="margin-bottom: 1rem;">
                     Just as the <strong>Mimosa Pudica</strong> instantly folds its leaves inward to hide its vital assets and expose sharp thorns when it senses a predator, our methodology ensures your infrastructure automatically "hardens" at the first sign of a threat—minimizing your attack surface.
