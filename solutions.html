@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solutions | V Pilot Cyber</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -11,15 +12,25 @@
     <div class="radar-bg"><div class="radar-scan"><div class="radar-sweep"></div></div></div>
 
     <nav class="navbar">
-        <div class="brand"><img src="logo.jpg" alt="V Pilot Logo"><div class="brand-text">V PILOT <span>CYBER SOLUTIONS</span></div></div>
+        <div class="brand">
+            <img src="logo.jpg" alt="V Pilot Logo" class="brand-logo">
+            <div class="brand-text-container">
+                <div class="brand-text">V PILOT</div>
+                <div class="brand-text-divider"></div>
+                <div class="brand-span">CYBER SOLUTIONS</div>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="technology.html">Technology</a>
             <a href="services.html">Services</a>
             <a href="solutions.html" class="active">Solutions</a>
             <a href="contact.html">Contact</a>
+            <a href="contact.html" class="nav-cta">Get Started</a>
         </div>
-        <a href="contact.html" class="nav-cta">Get Started</a>
     </nav>
 
     <section class="hero">
@@ -36,7 +47,7 @@
             <p>Operational Assurance | ISO 27001 Context</p>
             <div class="divider"></div>
         </div>
-        <div style="display:flex; align-items:center; gap:4rem;">
+        <div class="solutions-flex">
             <div style="flex:1;">
                 <p>Designed for existing Infrastructure (On-Prem/Hybrid/Cloud). We offer a complete <strong>Shared Responsibility Model</strong> where V-Pilot’s five specialized teams integrate directly with your setup.</p>
                 <br>
@@ -60,7 +71,7 @@
             <p>Secure Digital Transformation | ISO 27034 Context</p>
             <div class="divider"></div>
         </div>
-        <div style="display:flex; flex-direction:row-reverse; align-items:center; gap:4rem;">
+        <div class="solutions-flex-reverse">
             <div style="flex:1;">
                 <p>Designed for organizations migrating legacy infrastructure to the Cloud. We use a <strong>Minimum Viable Product (MVP)</strong> approach to build a secure cloud foundation.</p>
                 <br>
