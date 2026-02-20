@@ -66,7 +66,7 @@ ul { list-style: none; }
 .brand-text-container { display: flex; flex-direction: column; justify-content: center; }
 
 .brand-text { 
-    font-family: var(--font-head); font-weight: 800; font-size: 2.2rem; line-height: 1; 
+    font-family: var(--font-head); font-weight: 750; font-size: 2.0rem; line-height: 1; 
     background: linear-gradient(90deg, var(--primary-blue) 0%, #00d2ff 25%, var(--primary-blue) 50%, var(--deep-blue) 75%, var(--primary-blue) 100%);
     background-size: 200% auto;
     color: transparent;
@@ -78,14 +78,14 @@ ul { list-style: none; }
 .brand-text-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
-    margin: 2px 0 2px 1.1em; 
-    width: calc(100% - 1.1em);
+    margin: 1.7px 0 2px 1.1em; 
+    width: calc(100% - 1.4em);
     animation: textShine 3s linear infinite;
     background-size: 200% auto;
 }
 
 .brand-span { 
-    font-size: 0.5rem; letter-spacing: 2.9px; margin-left: 1.1em; text-transform: uppercase; font-weight: 600; 
+    font-size: 0.7rem; letter-spacing: 2.9px; margin-left: 1.1em; text-transform: uppercase; font-weight: 600; 
     background: linear-gradient(90deg, var(--logo-gold-dark) 0%, #ffe47a 25%, var(--logo-gold-dark) 50%, var(--logo-gold) 75%, var(--logo-gold-dark) 100%);
     background-size: 200% auto;
     color: transparent;
