@@ -172,14 +172,7 @@ footer a:hover { color: var(--bright-blue); }
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .navbar { position: relative; }
-    .menu-toggle { 
-        display: block; 
-        position: absolute; 
-        right: 5%; 
-        top: 50%; 
-        transform: translateY(-50%); 
-    }
+    .menu-toggle { display: block; }
     .nav-links {
         position: absolute; top: 100%; left: 0; width: 100%;
         background: rgba(255, 255, 255, 0.98);
@@ -188,7 +181,7 @@ footer a:hover { color: var(--bright-blue); }
         display: none;
     }
     .nav-links.active { display: flex; }
-    .nav-cta { width: 100%; text-align: center; }
+    .nav-cta { width: 100%; }
     
     .hero { min-height: 70vh; padding-top: 100px; text-align: center; }
     .hero h1 { font-size: 2.5rem; }
@@ -199,4 +192,3 @@ footer a:hover { color: var(--bright-blue); }
     .tech-grid-2, .contact-grid { grid-template-columns: 1fr; }
     .map-container { height: 250px; }
 }
-
