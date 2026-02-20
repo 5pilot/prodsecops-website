@@ -2,26 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology | The ART Engine</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="radar-bg">
-        <div class="radar-scan"><div class="radar-sweep"></div></div>
-    </div>
+    <div class="radar-bg"><div class="radar-scan"><div class="radar-sweep"></div></div></div>
 
     <nav class="navbar">
-        <a href="/" class="navbar-brand" aria-label="V Pilot Cyber Solutions Home"> 
-			<img src="logo.svg" alt="V Pilot 3D Logo" class="brand-logo"> 
-		</a>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="technology" class="active">Technology</a>
-            <a href="services">Services</a>
-            <a href="solutions">Solutions</a>
-            <a href="contact">Contact</a>
+        <div class="brand">
+            <img src="logo.jpg" alt="V Pilot Logo" class="brand-logo">
+            <div class="brand-text-container">
+                <div class="brand-text">V PILOT</div>
+                <div class="brand-text-divider"></div>
+                <div class="brand-span">CYBER SOLUTIONS</div>
+            </div>
         </div>
-        <a href="contact" class="nav-cta">Get Started</a>
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="technology.html" class="active">Technology</a>
+            <a href="services.html">Services</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="nav-cta">Get Started</a>
+        </div>
     </nav>
 
     <section class="hero">
@@ -29,16 +37,16 @@
             <span style="color:var(--bright-blue); font-weight:700; letter-spacing:2px;">THE CORE PLATFORM</span>
             <h1>The ART <br><span>Vulnerability Engine™</span></h1>
             <p>Automated Remediation TestBed. The industry's first "Shift-Left" Vulnerability Validation Platform that fixes problems, not just finds them.</p>
-			 <div class="engine-container">
-            <div class="engine">
-                <div class="turbine-blade"></div><div class="turbine-blade"></div>
-                <div class="turbine-blade"></div><div class="turbine-blade"></div>
+            <div class="engine-container">
+                <div class="engine">
+                    <div class="turbine-blade"></div><div class="turbine-blade"></div>
+                    <div class="turbine-blade"></div><div class="turbine-blade"></div>
+                </div>
+                <div class="engine">
+                    <div class="turbine-blade"></div><div class="turbine-blade"></div>
+                    <div class="turbine-blade"></div><div class="turbine-blade"></div>
+                </div>
             </div>
-            <div class="engine">
-                <div class="turbine-blade"></div><div class="turbine-blade"></div>
-                <div class="turbine-blade"></div><div class="turbine-blade"></div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -48,7 +56,7 @@
             <p>Our proprietary safety mechanism ensures zero downtime.</p>
             <div class="divider"></div>
         </div>
-        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:2rem; text-align:center;">
+        <div class="tech-grid-2">
             <div>
                 <i class="fas fa-check-double" style="font-size:3rem; color:var(--logo-gold); margin-bottom:1rem;"></i>
                 <h4>1. Compliance Gate</h4>
@@ -61,19 +69,20 @@
             </div>
         </div>
     </section>
+
     <section class="section bg-light">
         <div class="section-header">
             <h2>Master-Client Architecture</h2>
             <p>A novel approach to safe, automated remediation.</p>
             <div class="divider"></div>
         </div>
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
-            <div style="background:white; padding:2rem; border-radius:12px; box-shadow:var(--shadow-card);">
+        <div class="wing-grid">
+            <div class="wing-card">
                 <i class="fas fa-server" style="font-size:2rem; color:var(--primary-blue); margin-bottom:1rem;"></i>
                 <h3>Master Node (The Brain)</h3>
                 <p>Hosted in the V-Pilot Cloud. It acts as the "Golden Image Factory," instantly generating automated remediation scripts (Ansible/Terraform) whenever a new threat is detected.</p>
             </div>
-            <div style="background:white; padding:2rem; border-radius:12px; box-shadow:var(--shadow-card);">
+            <div class="wing-card">
                 <i class="fas fa-laptop-medical" style="font-size:2rem; color:var(--primary-blue); margin-bottom:1rem;"></i>
                 <h3>Client Node (The Validator)</h3>
                 <p>A lightweight agent in your environment. It mirrors your production setup to act as a safe "TestBed," executing the Triple-Track Validation before applying fixes.</p>
