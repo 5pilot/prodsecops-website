@@ -43,22 +43,27 @@ ul { list-style: none; }
 }
 @keyframes radar-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-/* NAVIGATION */
-.navbar {
-    position: fixed; top: 0; width: 100%; padding: 1rem 5%;
-    background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 82, 204, 0.1);
-    display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+/* --- UPDATED LOGO & BRAND STYLES --- */
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand img { height: 55px; }
-.brand-text { font-family: var(--font-head); font-weight: 800; color: var(--primary-blue); font-size: 2.2rem; line-height: 1; }
-.brand-text span { display: block; font-size: 0.5rem; color: var(--logo-gold-dark); letter-spacing: 2.9px; margin-left: 1.1em; text-transform: uppercase; font-weight: 600; }
-.nav-links { display: flex; gap: 2rem; }
-.nav-links a { font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
-.nav-links a:hover, .nav-links a.active { color: var(--primary-blue); }
-.nav-cta { padding: 0.6rem 1.5rem; background: var(--primary-blue); color: white !important; border-radius: 50px; font-weight: 600; }
-.nav-cta:hover { background: var(--deep-blue); }
+
+.brand-logo {
+    height: 60px; /* Scales the new SVG perfectly within your navbar */
+    width: auto;
+    display: block;
+    object-fit: contain; 
+}
+
+/* 3D Hover Effect */
+@media (min-width: 768px) {
+    .navbar-brand:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
 
 /* Vector Grid */
 .radar-bg::after {
