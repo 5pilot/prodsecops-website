@@ -2,30 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | V Pilot Cyber</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 4rem 10%; }
-        .contact-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-card); }
-        input, textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; }
-        button { width: 100%; padding: 1rem; background: var(--primary-blue); color: white; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
-    </style>
 </head>
 <body>
     <div class="radar-bg"><div class="radar-scan"><div class="radar-sweep"></div></div></div>
 
     <nav class="navbar">
-        <div class="brand"><img src="logo.jpg" alt="V Pilot Logo"><div class="brand-text">V PILOT <span>CYBER SOLUTIONS</span></div></div>
+        <div class="brand">
+            <img src="logo.jpg" alt="V Pilot Logo" class="brand-logo">
+            <div class="brand-text-container">
+                <div class="brand-text">V PILOT</div>
+                <div class="brand-text-divider"></div>
+                <div class="brand-span">CYBER SOLUTIONS</div>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="technology.html">Technology</a>
             <a href="services.html">Services</a>
             <a href="solutions.html">Solutions</a>
             <a href="contact.html" class="active">Contact</a>
+            <a href="contact.html" class="nav-cta">Get Started</a>
         </div>
-        <a href="contact.html" class="nav-cta">Get Started</a>
     </nav>
 
     <section class="hero" style="min-height:50vh;">
@@ -35,11 +40,13 @@
         </div>
     </section>
 
-    <section class="contact-grid">
-        <div>
-		        <div style="margin-bottom: 2rem;">
+    <section class="section">
+        <div class="contact-grid">
+            <div>
+                <div style="margin-bottom: 2rem;">
                     <h3><i class="fas fa-map-marker-alt" style="color:var(--primary-blue)"></i> Headquarters</h3>
-                    <p><strong>V Pilot Cyber Solutions LLP</strong></p> <p>Suite No 12, Pulsebay 64, Opp to Railway Station<br>Subbiah Salai, Pondicherry 605001, India.</p>
+                    <p><strong>V Pilot Cyber Solutions LLP</strong></p> 
+                    <p>Suite No 12, Pulsebay 64, Opp to Railway Station<br>Subbiah Salai, Pondicherry 605001, India.</p>
                 </div>
                 <div style="margin-bottom: 2rem;">
                     <h3><i class="fas fa-envelope" style="color:var(--primary-blue)"></i> Email</h3>
@@ -49,36 +56,37 @@
                     <h3><i class="fas fa-phone" style="color:var(--primary-blue)"></i> Phone</h3>
                     <p>+91 94423 31700</p>
                 </div>
-            <div class="map-container">
+                <div class="map-container" style="height: 300px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-card);">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.656754026362!2d79.8277!3d11.9360!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53617000000000%3A0x0!2sPulsebay!5e0!3m2!1sen!2sin!4v1600000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>			
-        </div>
-        <div class="contact-card">
-            <h3>Request Consultation</h3>
-            <br>
-            <form action="mailto:contact@vpilot.org" method="post" enctype="text/plain">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Business Email" required>
-                <select name="service_interest">
-                    <option value="" disabled selected>Select Service Interest</option>
-                    <option value="ART Engine">The ART Engine</option>
-                    <option value="Vul Pilot">Vulnerability Pilot</option>
-                    <option value="Vigil Pilot">Vigil Pilot</option>
-                    <option value="DevSecApps">DevSecApps Solution</option>
-                    <option value="ProdSecOps">ProdSecOps Solution</option>
-                </select>				
-                <textarea rows="5" placeholder="How can we help?" required></textarea>
-                <button type="submit">Send Request</button>
-            </form>
+                </div>			
+            </div>
+            <div class="contact-card">
+                <h3>Request Consultation</h3>
+                <br>
+                <form action="mailto:contact@vpilot.org" method="post" enctype="text/plain">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Business Email" required>
+                    <select name="service_interest">
+                        <option value="" disabled selected>Select Service Interest</option>
+                        <option value="ART Engine">The ART Engine</option>
+                        <option value="Vul Pilot">Vulnerability Pilot</option>
+                        <option value="Vigil Pilot">Vigil Pilot</option>
+                        <option value="DevSecApps">DevSecApps Solution</option>
+                        <option value="ProdSecOps">ProdSecOps Solution</option>
+                    </select>				
+                    <textarea rows="5" placeholder="How can we help?" required></textarea>
+                    <button type="submit">Send Request</button>
+                </form>
+            </div>
         </div>
     </section>
-    <section class="section">
+
+    <section class="section bg-light">
         <div class="section-header">
             <h2>Careers at V-Pilot</h2>
             <div class="divider"></div>
         </div>
-        
-        <div style="background: white; padding: 2rem; border-radius: 12px; border-left: 5px solid var(--deep-blue); max-width: 800px; margin: 0 auto;">
+        <div style="background: white; padding: 2.5rem; border-radius: 12px; border-left: 5px solid var(--deep-blue); max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-card);">
             <h3>DevSecOps Engineer</h3>
             <p style="color: var(--text-light); margin-bottom: 1rem;">Full Time | Remote/Hybrid</p>
             <p>We are looking for an engineer to implement our 5D ProdSecOps architecture. Experience with Kubernetes, CI/CD, and ISO 27034 required.</p>
@@ -93,7 +101,7 @@
             <div><h4>Links</h4><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
             <div><h4>Contact</h4><p>contact@vpilot.org</p></div>
         </div>
-        <div class="copyright">&copy; 2026 V Pilot Cyber Solutions LLP.</div>
+        <div class="copyright">© 2026 V Pilot Cyber Solutions LLP.</div>
     </footer>
 </body>
 </html>
