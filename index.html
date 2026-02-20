@@ -11,26 +11,28 @@
 </head>
 <body>
 
-    <div class="radar-bg">
-        <div class="radar-scan"><div class="radar-sweep"></div></div>
-    </div>
+    <div class="radar-bg"><div class="radar-scan"><div class="radar-sweep"></div></div></div>
 
     <nav class="navbar">
         <div class="brand">
-            <img src="logo.jpg" alt="V Pilot Logo">
-            <div class="brand-text">V PILOT <span>CYBER SOLUTIONS</span></div>
+            <img src="logo.jpg" alt="V Pilot Logo" class="brand-logo">
+            <div class="brand-text-container">
+                <div class="brand-text">V PILOT</div>
+                <div class="brand-text-divider"></div>
+                <div class="brand-span">CYBER SOLUTIONS</div>
+            </div>
         </div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="nav-links">
-            <a href="/" class="active">Home</a>
-            <a href="technology">Technology</a>
-            <a href="services">Services</a>
-            <a href="solutions">Solutions</a>
-            <a href="contact">Contact</a>
-            <a href="contact" class="nav-cta mobile-cta">Get Started</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="services.html">Services</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="nav-cta">Get Started</a>
         </div>
-        <a href="contact" class="nav-cta desktop-cta">Get Started</a>
     </nav>
 
     <section class="hero">
@@ -46,18 +48,17 @@
         <div class="section-header">
             <h2>Who We Are</h2>
             <p>The Unified Solution for Cyber Resilience</p>
-			<div class="divider"></div>				
+            <div class="divider"></div>				
             <p style="margin-top: 1rem;">We are the new generation of cybersecurity. We recognize that AI-driven development introduces risks; our mission is to transform those risks into resilient operations.</p>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section bg-light">
         <div class="section-header">
             <h2>5D PUDICA Methodology</h2>
             <p>Proactive Unified Defense & Integrated Cyber Adaptation</p>
-			<div class="divider"></div>			
+            <div class="divider"></div>			
         </div>
-		
         <div class="mimosa-container">
             <div class="mimosa-visual" title="Hover to see the Adaptation">
                 <div class="stem-left mimosa-stem">
@@ -80,7 +81,7 @@
                     <div class="leaf" style="bottom:140px"></div>					
                     <div class="leaf" style="bottom:160px"></div>
                 </div>
-                <div class="v-emblem-text"><i class="fa-solid fa-hand-pointer"></i> Hover to see Adaptation</div>				
+                <div class="v-emblem-text"><i class="fa-solid fa-hand-pointer"></i> Hover to Adapt</div>				
             </div>
 
             <div style="flex: 2; min-width: 300px;">
@@ -122,14 +123,14 @@
             </div>
             <div>
                 <h4>Site Map</h4>
-                <a href="technology">Technology</a>
-                <a href="services">Services</a>
-                <a href="solutions">Solutions</a>
+                <a href="technology.html">Technology</a>
+                <a href="services.html">Services</a>
+                <a href="solutions.html">Solutions</a>
             </div>
             <div>
                 <h4>Contact</h4>
                 <p>Pondicherry, India</p>
-                <p>enquiry@vpilot.org</p>
+                <p>contact@vpilot.org</p>
             </div>
         </div>
         <div class="copyright">&copy; 2026 V Pilot Cyber Solutions LLP. All Rights Reserved.</div>
