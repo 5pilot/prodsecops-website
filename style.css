@@ -60,7 +60,7 @@ ul { list-style: none; }
     display: flex; justify-content: space-between; align-items: center; z-index: 1000;
 }
 .brand { display: flex; align-items: center; gap: 10px; z-index: 1001;}
-.brand-logo { height: 55px; }
+.brand-logo { height: 63px; }
 
 /* BRAND TEXT ANIMATION & UNDERLINE */
 .brand-text-container { display: flex; flex-direction: column; justify-content: center; }
@@ -68,25 +68,33 @@ ul { list-style: none; }
 .brand-text { 
     font-family: var(--font-head); 
     font-weight: 800; 
-    font-size: 2.2rem; 
+    font-size: 2.7rem; 
     line-height: 1; 
-    color: transparent; /* Makes the inside of the letters invisible */
-    -webkit-text-stroke: 1.5px var(--primary-blue); /* The outline thickness and color */
-    text-stroke: 1.5px var(--primary-blue); /* Fallback for future support */
+    letter-spacing: 1.5px; /* Adjust this to widen or narrow 'V PILOT' */
+    color: transparent; 
+    -webkit-text-stroke: 1.5px var(--primary-blue); 
+    text-stroke: 1.5px var(--primary-blue); 
+    padding-left: 4px; /* Balances the extra space added by the last letter's tracking */
 }
 
 .brand-text-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
-    margin: 1.7px 0 2px 1.0em; 
+    height: 1.2px;
+    background: linear-gradient(90deg, transparent, var(--logo-gold-dark), transparent);
+    /* Aligns the line with the 'P' in PILOT. Adjust '1.4em' if you change the brand-text tracking */
+    margin: 5px 0 5px 0.5em; 
     width: calc(100% - 1.4em);
-    animation: textShine 3s linear infinite;
-    background-size: 200% auto;
 }
 
+
 .brand-span { 
-    font-size: 0.6rem; letter-spacing: 2.9px; margin-left: 1.0em; text-transform: uppercase; font-weight: 600; 
-    background: linear-gradient(90deg, var(--logo-gold-dark) 0%, #ffe47a 25%, var(--logo-gold-dark) 50%, var(--logo-gold) 75%, var(--logo-gold-dark) 100%);
+    font-size: 0.5rem; 
+    /* This spacing stretches 'CYBER SOLUTIONS' to match the width above it */
+    letter-spacing: 1.0px; 
+    /* Keeps it aligned with the divider line */
+    margin-left: 0.5em; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    background: linear-gradient(90deg, var(--logo-gold-dark) 0%, #ffe47a 25%, var(--logo-gold-dark) 50%, var(--primary-blue) 75%, var(--logo-gold-dark) 100%);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
