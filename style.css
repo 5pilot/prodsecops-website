@@ -60,7 +60,7 @@ ul { list-style: none; }
     display: flex; justify-content: space-between; align-items: center; z-index: 1000;
 }
 .brand { display: flex; align-items: center; gap: 0px; z-index: 1001;}
-.brand-logo { height: 63px; }
+.brand-logo { height: 67px; }
 
 /* BRAND TEXT ANIMATION & UNDERLINE */
 .brand-text-container { display: flex; flex-direction: column; justify-content: center; }
