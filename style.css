@@ -59,7 +59,7 @@ ul { list-style: none; }
     border-bottom: 1px solid rgba(0, 82, 204, 0.1);
     display: flex; justify-content: space-between; align-items: center; z-index: 1000;
 }
-.brand { display: flex; align-items: center; gap: 10px; z-index: 1001;}
+.brand { display: flex; align-items: center; gap: 0px; z-index: 1001;}
 .brand-logo { height: 63px; }
 
 /* BRAND TEXT ANIMATION & UNDERLINE */
