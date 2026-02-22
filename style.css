@@ -1,4 +1,4 @@
-/* --- V-PILOT GLOBAL STYLES --- */
+/* --- V-PILOT GLOBAL & SEO STYLES --- */
 :root {
     --primary-blue: #0052cc;
     --deep-blue: #022b6d;
@@ -9,212 +9,185 @@
     --bg-light: #f8fafc;
     --text-main: #172b4d;
     --text-light: #5e6c84;
-    --font-head: 'Outfit', sans-serif; /* Note: Will fallback to sans-serif if Google Fonts are removed */
-    --font-body: 'Inter', sans-serif;  /* Note: Will fallback to sans-serif if Google Fonts are removed */
+    --font-head: 'Outfit', sans-serif; 
+    --font-body: 'Inter', sans-serif;  
     --shadow-card: 0 10px 30px rgba(0, 82, 204, 0.08);
     --shadow-hover: 0 15px 40px rgba(0, 82, 204, 0.15);
 }
 
-/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--bg-white); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 h1, h2, h3, h4 { font-family: var(--font-head); color: var(--deep-blue); }
 a { text-decoration: none; transition: 0.3s; }
 ul { list-style: none; }
 
-/* --- 3D RADAR BACKGROUND ANIMATION --- */
+/* --- 3D FLOATING RADAR BACKGROUND --- */
 .radar-bg {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
     background: radial-gradient(circle at 50% 50%, #f0f8ff 0%, #ffffff 70%);
-    overflow: hidden;
 }
 .radar-scan {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    width: 80vw; height: 80vw; border-radius: 50%;
-    border: 1px solid rgba(0, 82, 204, 0.05);
-    background: repeating-radial-gradient(rgba(0, 82, 204, 0.02) 0, rgba(0, 82, 204, 0.02) 1px, transparent 2px, transparent 100px);
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotateX(60deg);
+    width: 100vw; height: 100vw; border-radius: 50%;
+    border: 1px solid rgba(0, 82, 204, 0.1);
+    background: repeating-radial-gradient(rgba(0, 82, 204, 0.03) 0, rgba(0, 82, 204, 0.03) 2px, transparent 3px, transparent 100px);
+    animation: floatBg 15s ease-in-out infinite alternate;
 }
 .radar-sweep {
     position: absolute; left: 50%; top: 50%; width: 50%; height: 2px;
     background: linear-gradient(90deg, transparent, var(--bright-blue));
     transform-origin: left center;
     animation: radar-spin 4s linear infinite;
-    box-shadow: 0 0 15px var(--bright-blue);
-    opacity: 0.3;
+    box-shadow: 0 0 20px var(--bright-blue);
 }
 @keyframes radar-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes floatBg { from { transform: translate(-50%, -50%) rotateX(60deg) translateY(-20px); } to { transform: translate(-50%, -50%) rotateX(60deg) translateY(20px); } }
 
-/* Vector Grid */
-.radar-bg::after {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0, 82, 204, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 82, 204, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-}
-
-/* NAVIGATION */
+/* --- NAVIGATION --- */
 .navbar {
     position: fixed; top: 0; width: 100%; padding: 1rem 5%;
     background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 82, 204, 0.1);
     display: flex; justify-content: space-between; align-items: center; z-index: 1000;
 }
-.brand { display: flex; align-items: center; gap: 0px; z-index: 1001;}
-.brand-logo { height: 67px; }
-
-/* BRAND TEXT ANIMATION & UNDERLINE */
-.brand-text-container { display: flex; flex-direction: column; justify-content: center; }
-
-.brand-text { 
-    font-family: var(--font-head); 
-    font-weight: 800; 
-    font-size: 2.7rem; 
-    line-height: 1; 
-    letter-spacing: 1.5px; /* Adjust this to widen or narrow 'V PILOT' */
-    color: transparent; 
-    -webkit-text-stroke: 1.5px var(--primary-blue); 
-    text-stroke: 1.5px var(--primary-blue); 
-    padding-left: 4px; /* Balances the extra space added by the last letter's tracking */
-}
-
-.brand-text-divider {
-    height: 1.2px;
-    background: linear-gradient(90deg, transparent, var(--logo-gold-dark), transparent);
-    /* Aligns the line with the 'P' in PILOT. Adjust '1.4em' if you change the brand-text tracking */
-    margin: 5px 0 5px 0.5em; 
-    width: calc(100% - 1.4em);
-}
-
-
-.brand-span { 
-    font-size: 0.5rem; 
-    /* This spacing stretches 'CYBER SOLUTIONS' to match the width above it */
-    letter-spacing: 1.0px; 
-    /* Keeps it aligned with the divider line */
-    margin-left: 0.5em; 
-    text-transform: uppercase; 
-    font-weight: 600; 
-    background: linear-gradient(90deg, var(--logo-gold-dark) 0%, #ffe47a 25%, var(--logo-gold-dark) 50%, var(--primary-blue) 75%, var(--logo-gold-dark) 100%);
-    background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: textShine 3s linear infinite;
-}
-
-@keyframes textShine { to { background-position: 200% center; } }
-
+.brand { display: flex; align-items: center; cursor: pointer; transition: transform 0.4s; }
+.brand:hover { transform: translateY(-2px); }
+.brand-logo { height: 60px; object-fit: contain; }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-blue); }
-.nav-cta { padding: 0.6rem 1.5rem; background: var(--primary-blue); color: white !important; border-radius: 50px; font-weight: 600; text-align: center; }
+.nav-cta { padding: 0.6rem 1.5rem; background: var(--primary-blue); color: white !important; border-radius: 50px; }
 .nav-cta:hover { background: var(--deep-blue); }
 
-/* PURE CSS HAMBURGER MENU (Desktop Hidden) */
-.menu-toggle { 
-    display: none; 
-    cursor: pointer; 
-    z-index: 1001; 
-}
-.menu-toggle .bar { 
-    display: block; 
-    width: 25px; 
-    height: 3px; 
-    margin: 5px auto; 
-    background-color: var(--primary-blue); 
-    transition: all 0.3s ease-in-out;
-    border-radius: 2px;
-}
-
-/* SECTIONS & COMPONENTS */
-.hero { min-height: 90vh; display: flex; align-items: center; padding: 0 10%; position: relative; padding-top: 80px; }
-.hero-content { max-width: 650px; z-index: 2; }
+/* --- LAYOUTS & TYPOGRAPHY --- */
+.hero { min-height: 80vh; display: flex; align-items: center; padding: 120px 10% 4rem; position: relative; }
+.hero-content { max-width: 800px; z-index: 2; }
 .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
 .hero h1 span { color: var(--bright-blue); }
 .hero p { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2rem; border-left: 4px solid var(--bright-blue); padding-left: 1rem; }
-.btn-primary { padding: 1rem 2.5rem; background: var(--primary-blue); color: white; border-radius: 6px; font-weight: 600; display: inline-block; }
+.btn-primary { padding: 1rem 2.5rem; background: var(--primary-blue); color: white; border-radius: 6px; font-weight: 700; display: inline-block; }
 .btn-primary:hover { background: var(--deep-blue); transform: translateY(-3px); }
 
 .section { padding: 6rem 10%; position: relative; }
 .bg-light { background: var(--bg-light); }
-.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem; }
-.section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-.divider { width: 60px; height: 4px; background: var(--bright-blue); margin: 1.5rem auto 0; }
+.section-header { text-align: center; margin-bottom: 4rem; max-width: 800px; margin: 0 auto; }
+.section-header h2 { font-size: 2.5rem; }
+.divider { width: 60px; height: 4px; background: var(--bright-blue); margin: 1.5rem auto; }
 
-/* UTILITY LAYOUTS */
-.tech-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; text-align: center; }
-.solutions-flex { display: flex; align-items: center; gap: 4rem; }
-.solutions-flex-reverse { display: flex; flex-direction: row-reverse; align-items: center; gap: 4rem; }
-
-/* MIMOSA ANIMATION */
+/* --- 1. MIMOSA PUDICA 3D 'V' ANIMATION (Home Page) --- */
 .mimosa-container { display: flex; flex-wrap: wrap; align-items: center; gap: 4rem; margin-top: 3rem; }
-.mimosa-visual { flex: 1; min-width: 300px; height: 300px; display: flex; justify-content: center; align-items: flex-end; position: relative; cursor: pointer; }
-.mimosa-stem { width: 8px; height: 200px; background: #6b8c42; border-radius: 10px; position: absolute; bottom: 0; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-origin: bottom center; }
-.stem-left { transform: rotate(-35deg); left: 48%; }
-.stem-right { transform: rotate(35deg); right: 48%; }
-.leaf { position: absolute; width: 30px; height: 12px; background: #8abf56; border-radius: 20px 0 20px 0; }
-.stem-left .leaf { left: -25px; }
-.stem-right .leaf { right: -25px; transform: scaleX(-1); }
-.v-emblem-text { position: absolute; bottom: -40px; font-weight: bold; color: var(--primary-blue); letter-spacing: 2px; }
-.mimosa-visual:hover .stem-left { transform: rotate(-5deg); height: 180px; background: #556b2f; }
-.mimosa-visual:hover .stem-right { transform: rotate(5deg); height: 180px; background: #556b2f; }
-.mimosa-visual:hover .leaf { background: #556b2f; width: 10px; }
+.mimosa-v {
+    position: relative; width: 200px; height: 250px; margin: 0 auto;
+    perspective: 1000px; cursor: pointer;
+}
+.mimosa-stem {
+    position: absolute; bottom: 0; width: 8px; height: 200px;
+    background: linear-gradient(to top, #022b6d, #2684ff);
+    border-radius: 10px; transform-origin: bottom center;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stem-left { left: 45%; transform: rotate(-30deg); }
+.stem-right { right: 45%; transform: rotate(30deg); }
+.mimosa-leaf {
+    position: absolute; width: 40px; height: 15px; background: #d4cba5;
+    border-radius: 20px 0 20px 0; transition: all 0.5s ease;
+    transform-origin: inner center; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.stem-left .mimosa-leaf { left: -35px; transform-origin: right center; }
+.stem-right .mimosa-leaf { right: -35px; transform-origin: left center; transform: scaleX(-1); }
 
-/* --- 3D TWIN ENGINE ANIMATION --- */
-.engine-container { display: flex; justify-content: center; gap: 40px; margin: 3rem 0; perspective: 800px; }
-.engine { width: 120px; height: 120px; background: conic-gradient(from 0deg, #ccc, #fff, #ccc); border-radius: 50%; border: 8px solid var(--primary-blue); position: relative; animation: spin 2s linear infinite; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-.engine::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: var(--deep-blue); border-radius: 50%; }
-.turbine-blade { position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #999; }
-.turbine-blade:nth-child(2) { transform: rotate(45deg); }
-.turbine-blade:nth-child(3) { transform: rotate(90deg); }
-.turbine-blade:nth-child(4) { transform: rotate(135deg); }
-@keyframes spin { 100% { transform: rotate(360deg); } }
+/* The Protective Fold Animation */
+.mimosa-v:hover .stem-left { transform: rotate(-10deg); background: #0052cc; }
+.mimosa-v:hover .stem-right { transform: rotate(10deg); background: #0052cc; }
+.mimosa-v:hover .mimosa-leaf { transform: rotateX(80deg) scale(0.5); background: #022b6d; }
+.mimosa-label { position: absolute; bottom: -30px; width: 100%; text-align: center; font-weight: bold; color: var(--primary-blue); }
 
-/* --- WING TYPE GRIDS --- */
-.wing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.wing-card { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: var(--shadow-card); border-top: 5px solid var(--logo-gold); transition: 0.3s; position: relative; overflow: hidden; }
-.wing-card:hover { transform: translateY(-10px); border-top-color: var(--primary-blue); box-shadow: var(--shadow-hover); }
-.wing-icon { font-size: 2.5rem; color: var(--bright-blue); margin-bottom: 1rem; }
-.wing-label { font-size: 0.8rem; font-weight: 700; color: var(--logo-gold-dark); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
-.learn-more { color: var(--primary-blue); font-weight: 700; margin-top: 1rem; display: inline-block; font-size: 0.9rem; }
-.learn-more:hover { text-decoration: underline; }
+/* --- 2. TWIN ART ENGINES 3D (Tech Page) --- */
+.art-engine-showcase { display: flex; justify-content: center; gap: 4rem; margin: 4rem 0; perspective: 1200px; }
+.twin-engine {
+    width: 140px; height: 140px; border-radius: 50%; position: relative;
+    background: radial-gradient(circle at 30% 30%, #fff, #ccc 70%, #666);
+    border: 10px solid var(--deep-blue);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 -10px 20px rgba(0,0,0,0.5);
+    transform: rotateX(20deg) rotateY(15deg);
+    transform-style: preserve-3d;
+}
+.engine-turbine {
+    position: absolute; top: 10%; left: 10%; width: 80%; height: 80%;
+    border-radius: 50%; border: 4px dashed var(--bright-blue);
+    animation: spinTurbo 1s linear infinite;
+}
+.engine-core {
+    position: absolute; top: 40%; left: 40%; width: 20%; height: 20%;
+    background: var(--bright-blue); border-radius: 50%;
+    box-shadow: 0 0 20px var(--bright-blue);
+}
+@keyframes spinTurbo { 100% { transform: rotate(360deg); } }
 
-/* --- CONTACT --- */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 2rem 0; }
-.contact-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-card); }
-.contact-card input, .contact-card select, .contact-card textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; font-family: var(--font-body); }
-.contact-card button { width: 100%; padding: 1rem; background: var(--primary-blue); color: white; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; }
-.contact-card button:hover { background: var(--deep-blue); }
+/* --- 3. FLIGHT WINGS & ENGINES (Services Page) --- */
+.wing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 3rem;}
+.wing-card {
+    background: white; padding: 2.5rem; border-radius: 12px;
+    box-shadow: var(--shadow-card); position: relative; overflow: hidden;
+    transition: transform 0.4s; border-top: 5px solid var(--logo-gold);
+}
+.wing-card:hover { transform: translateY(-10px); border-color: var(--primary-blue); }
 
-/* FOOTER */
-footer { background: var(--deep-blue); color: white; padding: 5rem 10% 2rem; }
+/* Abstract Wing Shapes */
+.wing-graphic { width: 100%; height: 100px; position: relative; margin-bottom: 2rem; border-bottom: 2px solid #eee; }
+.wing-shape { position: absolute; background: var(--bg-light); border: 2px solid var(--primary-blue); }
+/* Specific Wing Types */
+.wing-mid { width: 80%; height: 20px; top: 40%; left: 10%; border-radius: 50px; }
+.wing-low { width: 80%; height: 20px; bottom: 10%; left: 10%; border-radius: 0 0 50px 50px; }
+.wing-high { width: 80%; height: 20px; top: 10%; left: 10%; border-radius: 50px 50px 0 0; }
+.wing-dihedral { width: 40%; height: 15px; top: 50%; left: 5%; transform: rotate(-15deg); border-radius: 20px; }
+.wing-anhedral { width: 40%; height: 15px; top: 30%; left: 5%; transform: rotate(15deg); border-radius: 20px; }
+.wing-gull { width: 30%; height: 15px; top: 30%; left: 10%; transform: rotate(-20deg); border-radius: 20px; }
+
+/* Mini Engine attached to wings */
+.mini-engine {
+    position: absolute; width: 40px; height: 40px; background: var(--deep-blue);
+    border-radius: 50%; left: 50%; transform: translateX(-50%); top: -10px;
+    border: 3px solid var(--logo-gold);
+}
+.mini-engine::after {
+    content: ''; position: absolute; top: 20%; left: 20%; width: 60%; height: 60%;
+    border-radius: 50%; border: 2px dashed #fff; animation: spinTurbo 2s linear infinite;
+}
+
+/* --- 4. INFINITE LOOP 3D (Solutions Page) --- */
+.infinite-container { display: flex; justify-content: center; align-items: center; height: 300px; perspective: 1000px; margin: 3rem 0;}
+.infinity-path {
+    width: 300px; height: 150px; position: relative;
+    transform-style: preserve-3d; animation: tiltLoop 10s ease-in-out infinite alternate;
+}
+.loop-circle {
+    position: absolute; width: 150px; height: 150px; border: 8px solid var(--bright-blue);
+    border-radius: 50%; box-shadow: 0 0 20px rgba(38, 132, 255, 0.4);
+}
+.loop-left { left: 0; border-right-color: transparent; transform: rotate(45deg); }
+.loop-right { right: 0; border-left-color: transparent; transform: rotate(-45deg); }
+/* Engines traveling the loop */
+.loop-engine {
+    position: absolute; width: 50px; height: 50px; background: var(--deep-blue);
+    border-radius: 50%; top: 50px; left: 125px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    animation: travelLoop 4s linear infinite; z-index: 10;
+}
+@keyframes tiltLoop { from { transform: rotateX(40deg) rotateY(-20deg); } to { transform: rotateX(40deg) rotateY(20deg); } }
+@keyframes travelLoop { 
+    0% { transform: translateX(-100px) scale(1); z-index: 10; } 
+    25% { transform: translateX(0) scale(1.2); z-index: 20; } 
+    50% { transform: translateX(100px) scale(1); z-index: 10; } 
+    75% { transform: translateX(0) scale(0.8); z-index: 5; } 
+    100% { transform: translateX(-100px) scale(1); z-index: 10; } 
+}
+
+/* --- FOOTER --- */
+footer { background: var(--deep-blue); color: white; padding: 4rem 10% 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
 footer h4 { color: white; margin-bottom: 1.5rem; }
 footer a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 0.5rem; }
 footer a:hover { color: var(--bright-blue); }
+.social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+.social-icons a { font-size: 1.5rem; }
 .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
-
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 768px) {
-    /* Show pure CSS hamburger menu on mobile */
-    .menu-toggle { display: block; }
-    
-    .nav-links {
-        position: absolute; top: 100%; left: 0; width: 100%;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column; padding: 2rem 5%;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        display: none;
-    }
-    .nav-links.active { display: flex; }
-    .nav-cta { width: 100%; }
-    
-    .hero { min-height: 70vh; padding-top: 100px; text-align: center; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { border-left: none; padding-left: 0; border-top: 4px solid var(--bright-blue); padding-top: 1rem; }
-    .section { padding: 4rem 5%; }
-    
-    .mimosa-container, .solutions-flex, .solutions-flex-reverse { flex-direction: column; gap: 2rem; text-align: center; }
-    .tech-grid-2, .contact-grid { grid-template-columns: 1fr; }
-    .map-container { height: 250px; }
-}
