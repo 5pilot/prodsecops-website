@@ -3,130 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | V-Pilot Cyber Solutions</title>
-    <meta name="description" content="Intelligent, Adaptive, AI-Powered Cyber Security. We Pilot Your Security Operations.">
+    <meta name="description" content="ProdSecOps by V Pilot: Secure Cloud Migration & Managed Security Operations. Move legacy infra to ARC-SecLab with ISO 27017 compliance.">
+    <meta name="keywords" content="Cloud Migration, SecOps, ISO 27017, Infrastructure Security, V Pilot, ARC-SecLab, Managed SOC">
+    <title>ProdSecOps | Secure Cloud Migration & Operations</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="radar-bg"><div class="radar-scan"><div class="radar-sweep"></div></div></div>
-    
+
+    <div id="canvas-container"></div>
+    <div class="overlay-grid"></div>
+
     <nav class="navbar">
-        <a href="index.html" class="brand" aria-label="Home">
-            <img src="logo.svg" alt="V Pilot Logo" class="brand-logo">
-        </a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="technology.html">Technology</a>
-            <a href="services.html">Services</a>
-            <a href="solutions.html">Solutions</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="contact.html" class="nav-cta">Get Started</a>
+        <div class="container nav-box">
+            <a href="#" class="brand">
+                <div class="brand-logo">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="brand-text">PRODSEC<span class="highlight">OPS</span></div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#migration">Migration Process</a>
+                <a href="#tiers">Infra Tiers</a>
+                <a href="#responsibility">Responsibility</a>
+                <a href="https://vpilot.org" target="_blank" class="external-link">V-Pilot Core <i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <a href="https://vpilot.org/contact.html" class="btn btn-sm">Start Migration</a>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <span style="color:var(--bright-blue); font-weight:700; letter-spacing:2px;">WE PILOT YOUR SECURITY OPERATIONS</span>
-            <h1>Intelligent. Adaptive.<br><span>AI-Powered Defense.</span></h1>
-            <p>We provide a complete, automated, and governed security ecosystem powered by our 5D PUDICA Methodology. Don't Hire. Let us Pilot your Infra Security.</p>
-            <a href="services.html" class="btn-primary">Explore Pilot Services</a>
-        </div>
-    </section>
-
-    <section class="section bg-light">
-        <div class="section-header">
-            <h2>Who We Are</h2>
-            <p>The Unified Solution for Cyber Resilience</p>
-            <div class="divider"></div>             
-            <p style="margin-top: 1rem;">Led by Chief Security Pilot Velliyangiri Sekar, we are the new generation of cybersecurity. We recognize that AI-driven development introduces risks; our mission is to transform those risks into resilient operations.</p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="section-header">
-            <h2>5D PUDICA Methodology</h2>
-            <p>Proactive Unified Defense & Integrated Cyber Adaptation</p>
-            <div class="divider"></div>         
-        </div>
-        <div class="mimosa-container">
-            <div class="mimosa-v" title="Hover to Adapt">
-                <div class="stem-left mimosa-stem">
-                    <div class="mimosa-leaf" style="bottom:20px"></div>
-                    <div class="mimosa-leaf" style="bottom:60px"></div>                 
-                    <div class="mimosa-leaf" style="bottom:100px"></div>
-                    <div class="mimosa-leaf" style="bottom:140px"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="status-indicator">
+                    <span class="dot"></span> System: ARC-SecLab Active
                 </div>
-                <div class="stem-right mimosa-stem">
-                    <div class="mimosa-leaf" style="bottom:20px"></div>
-                    <div class="mimosa-leaf" style="bottom:60px"></div>                 
-                    <div class="mimosa-leaf" style="bottom:100px"></div>
-                    <div class="mimosa-leaf" style="bottom:140px"></div>
+                <h1>Secure Infrastructure <br><span class="text-gradient">Transformation.</span></h1>
+                <p>We migrate your legacy on-premise infrastructure into our <strong>ARC-SecLab</strong> (Automated Remediation Cloud). A secure-by-design environment aligned with ISO 27017 and operated by 5PilotSecOps.</p>
+                
+                <div class="cta-group">
+                    <a href="#tiers" class="btn btn-primary">View Infra Tiers</a>
+                    <a href="#migration" class="btn btn-outline">The Migration Path</a>
                 </div>
-                <div class="mimosa-label"><i class="fas fa-hand-pointer"></i> Hover to Adapt</div>
-            </div>
 
-            <div style="flex: 2; min-width: 300px;">
-                <h3>Nature-Inspired Driven Governance</h3>
-                <p>Just as the <strong>Mimosa Pudica</strong> instantly folds its leaves inward to hide its vital assets and expose sharp thorns when it senses a predator, our methodology ensures your infrastructure automatically "hardens" at the first sign of a threat—minimizing your attack surface and making your environment painful for attackers.</p>
-                <br>
-                <div style="background: white; padding: 1.5rem; border-left: 4px solid var(--primary-blue); box-shadow: var(--shadow-card);">
-                    <h4>Core Philosophy: "Minimal Viable Security"</h4>
-                    <p>Traditional security builds walls that can be climbed. The PUDICA philosophy builds a living system. We reconstruct your business architecture to deliver cost-effective operational excellence, seamlessly guiding your organization from foundational Setup to resilient Respond mechanisms.</p>
+                <div class="stats-row">
+                    <div class="stat">
+                        <span class="stat-num">ISO 27017</span>
+                        <span class="stat-label">Cloud Security</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-label">Managed SOC</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">Zero</span>
+                        <span class="stat-label">Config Drift</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-light">
-        <div class="section-header">
-            <h2>Why Choose V-Pilot?</h2>
-            <p>We don't just promise security. We warranty it.</p>
-            <div class="divider"></div>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div style="background:white; padding:2rem; border-radius:12px; box-shadow:var(--shadow-card);">
-                <h4><i class="fas fa-plane" style="color:var(--bright-blue);"></i> Dedicated Security Wing</h4>
-                <p>Eliminate the overhead of recruitment, training, and tool procurement. Let V-Pilot operate your security seamlessly.</p>
+    <section id="migration" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Migration Bridge</h2>
+                <p>From Legacy Chaos to Managed Order.</p>
+                <div class="divider"></div>
             </div>
-            <div style="background:white; padding:2rem; border-radius:12px; box-shadow:var(--shadow-card);">
-                <h4><i class="fas fa-award" style="color:var(--logo-gold);"></i> Service Assurance Warranty</h4>
-                <p>Most vendors deliver reports. We deliver outcomes. If a breach occurs via a remediated vulnerability, we offer a financial service credit penalty.</p>
-            </div>
-            <div style="background:white; padding:2rem; border-radius:12px; box-shadow:var(--shadow-card);">
-                <h4><i class="fas fa-coins" style="color:var(--bright-blue);"></i> Cost-Effective & Scalable</h4>
-                <p>Our 3-Tier Service Model ensures you pay only for the capacity and protection level your business stage requires.</p>
-            </div>
-            <div style="background:white; padding:2rem; border-radius:12px; box-shadow:var(--shadow-card);">
-                <h4><i class="fas fa-sync" style="color:var(--bright-blue);"></i> Holistic Single Solution</h4>
-                <p>From DevSecApps digital migration to ProdSecOps operational assurance, we cover 100% of your shared responsibility.</p>
+
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <h3>Lift & Secure</h3>
+                    <p>We containerize or re-host your workloads into the ARC-SecLab environment, applying a "Deny-All" network policy by default.</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <h3>Automate (ART)</h3>
+                    <p>The ART Engine is attached. It scans for vulnerabilities and auto-remediates configuration drift instantly.</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <h3>Operate (5Pilot)</h3>
+                    <p>Our 5-Pilot squad takes over daily operations: Patching, Monitoring, Backup, and Identity Management.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h4>V Pilot: We Pilot Your Security Operations</h4>
-                <div class="social-icons">
+    <section id="tiers" class="section bg-darker">
+        <div class="container">
+            <div class="section-header">
+                <h2>Infrastructure Tiers</h2>
+                <p>Select the operational model that fits your scale.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card basic">
+                    <div class="card-header">
+                        <span class="badge">Small Team</span>
+                        <h3>Cloud Essentials</h3>
+                        <p class="desc">&lt; 60 Employees</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Cloud-Only AD / Entra ID</li>
+                        <li><i class="fas fa-check"></i> Endpoint Patching (ART)</li>
+                        <li><i class="fas fa-check"></i> Basic Intune Policies</li>
+                        <li><i class="fas fa-check"></i> 8x5 Support</li>
+                    </ul>
+                    <a href="https://vpilot.org/contact.html" class="btn btn-full">Get Started</a>
+                </div>
+
+                <div class="price-card standard featured">
+                    <div class="glow-effect"></div>
+                    <div class="card-header">
+                        <span class="badge highlight">Most Popular</span>
+                        <h3>ARC-SecLab Core</h3>
+                        <p class="desc">60 - 300 Employees</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <strong>Full Migration to ARC</strong></li>
+                        <li><i class="fas fa-check"></i> 5-Pillar Security Setup</li>
+                        <li><i class="fas fa-check"></i> 24/7 SOC Monitoring</li>
+                        <li><i class="fas fa-check"></i> ISO 27017 Compliance</li>
+                        <li><i class="fas fa-check"></i> Auto-Remediation</li>
+                    </ul>
+                    <a href="https://vpilot.org/contact.html" class="btn btn-full btn-glow">Migrate Now</a>
+                </div>
+
+                <div class="price-card premium">
+                    <div class="card-header">
+                        <span class="badge">Enterprise</span>
+                        <h3>Dedicated Ops</h3>
+                        <p class="desc">300+ Employees</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <strong>Dedicated SecOps Squad</strong></li>
+                        <li><i class="fas fa-check"></i> Advanced Threat Hunting</li>
+                        <li><i class="fas fa-check"></i> Custom GRC Reporting</li>
+                        <li><i class="fas fa-check"></i> 15-min SLA Response</li>
+                    </ul>
+                    <a href="https://vpilot.org/contact.html" class="btn btn-full">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="responsibility" class="section">
+        <div class="container">
+            <div class="resp-box">
+                <div class="resp-content">
+                    <h2>The Managed Shared Responsibility Model</h2>
+                    <p>Unlike standard AWS/Azure where you secure the OS, <strong>we secure the OS and the Platform.</strong></p>
+                    
+                    <div class="resp-grid">
+                        <div class="resp-item">
+                            <h4>You Manage</h4>
+                            <ul>
+                                <li><i class="fas fa-user"></i> Data & Content</li>
+                                <li><i class="fas fa-laptop-code"></i> Application Logic</li>
+                                <li><i class="fas fa-users"></i> User Accounts</li>
+                            </ul>
+                        </div>
+                        <div class="resp-divider">
+                            <div class="line"></div>
+                            <div class="vs">VS</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="resp-item vpilot-side">
+                            <h4>V-Pilot Manages (ProdSecOps)</h4>
+                            <ul>
+                                <li><i class="fas fa-server"></i> <strong>OS Hardening & Patching</strong></li>
+                                <li><i class="fas fa-wifi"></i> <strong>Network Security (WAF/Firewall)</strong></li>
+                                <li><i class="fas fa-shield-alt"></i> <strong>Threat Detection (SOC)</strong></li>
+                                <li><i class="fas fa-file-contract"></i> <strong>Compliance Evidence</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h4>PRODSEC<span class="highlight">OPS</span></h4>
+                    <p>Secure Infrastructure Migration.</p>
+                    <p class="sub">Powered by V Pilot Cyber Solutions.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="col">
+                        <h5>Explore</h5>
+                        <a href="#migration">Migration</a>
+                        <a href="#tiers">Tiers</a>
+                        <a href="https://vpilot.org">Core Site</a>
+                    </div>
+                    <div class="col">
+                        <h5>Ecosystem</h5>
+                        <a href="https://5pilot.com">5Pilot Ops</a>
+                        <a href="https://prodsecapps.com">ProdSecApps</a>
+                    </div>
+                    <div class="col">
+                        <h5>Legal</h5>
+                        <a href="https://vpilot.org/privacy">Privacy Policy</a>
+                        <a href="https://vpilot.org/terms">Service Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="copyright">
+                    &copy; 2026 V Pilot Cyber Solutions LLP. All Rights Reserved.
                 </div>
             </div>
-            <div>             
-                <h4>Ecosystem</h4>
-                <a href="https://vpilot.org">vpilot.org (Corporate)</a>
-                <a href="https://5pilot.com">5pilot.com (SecOps Solutions)</a>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
         </div>
-        <div class="copyright">&copy; 2026 V Pilot Cyber Solutions LLP. All Rights Reserved.</div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
